@@ -1,0 +1,14 @@
+.page {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.page-image {
+  margin-right: 24px;
+  margin-bottom: 24px;
+}
+
+.page-p-500 {
+  width: 500px;
+}
