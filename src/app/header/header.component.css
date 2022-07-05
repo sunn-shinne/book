@@ -1,0 +1,11 @@
+.header {
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.header-content {
+  width: 840px;
+  margin: 0 auto;
+  padding-top: 16px;
+  padding-bottom: 18px;
+}
