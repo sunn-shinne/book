@@ -9,6 +9,8 @@ import { ContentComponent } from './content/content.component';
 import { FirstPageComponent } from './pages/first-page/first-page.component';
 import { SecondPageComponent } from './pages/second-page/second-page.component';
 import { ThirdPageComponent } from './pages/third-page/third-page.component';
+import { FourthPageComponent } from './pages/fourth-page/fourth-page.component';
+import { FifthPageComponent } from './pages/fifth-page/fifth-page.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ThirdPageComponent } from './pages/third-page/third-page.component';
     ContentComponent,
     FirstPageComponent,
     SecondPageComponent,
-    ThirdPageComponent
+    ThirdPageComponent,
+    FourthPageComponent,
+    FifthPageComponent
   ],
   imports: [
     BrowserModule,
