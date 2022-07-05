@@ -10,6 +10,7 @@ export class PaginationComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
