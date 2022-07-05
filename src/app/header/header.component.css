@@ -4,8 +4,7 @@
 }
 
 .header-content {
-  width: 840px;
+  width: 765px;
   margin: 0 auto;
-  padding-top: 16px;
-  padding-bottom: 18px;
+  padding: 16px 40px 18px;
 }
