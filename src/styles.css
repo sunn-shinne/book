@@ -24,17 +24,27 @@
   --border-light: #D8D8D8;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   box-sizing: border-box;
 
-  height: 100%;
   margin: 0;
+  height: 100%;
+  background-color: var(--white);
+  
   overflow-x: hidden;
 
   color: var(--black);
-  font: 14px/20px "Segoe UI", sans-serif;
+  font: 14px/20px "Segoe UI", sans-serif;  
+}
 
-  background-color: var(--white);
+app-root {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
 h1 {
