@@ -68,3 +68,9 @@ p {
   margin-top: 0;
   width: 100%;
 }
+
+a:active,
+a:hover, 
+a {
+  text-decoration: none;
+}

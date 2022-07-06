@@ -17,11 +17,18 @@
   cursor: pointer;
 }
 
-.pagination-link:not(.selected):hover {
-  background-color: var(--hover-light);
+.selected a {
+  color: var(--white); 
 }
 
-.selected {
+a:not(.selected){
+  color: var(--black)
+}
+
+.pagination-link.selected {
   background-color: var(--violet);
-  color: var(--white);
+}
+
+.pagination-link:not(.selected):hover {
+  background-color: var(--hover-light);
 }
