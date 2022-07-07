@@ -3,14 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PaginationComponent } from './pagination/pagination.component';
 import { HeaderComponent } from './header/header.component';
-import { ContentComponent } from './content/content.component';
-import { FirstPageComponent } from './pages/first-page/first-page.component';
-import { SecondPageComponent } from './pages/second-page/second-page.component';
-import { ThirdPageComponent } from './pages/third-page/third-page.component';
-import { FourthPageComponent } from './pages/fourth-page/fourth-page.component';
-import { FifthPageComponent } from './pages/fifth-page/fifth-page.component';
+import { PaginationComponent } from './book/pagination/pagination.component';
+import { ContentComponent } from './book/content/content.component';
+import { FirstPageComponent } from './book/pages/first-page/first-page.component';
+import { SecondPageComponent } from './book/pages/second-page/second-page.component';
+import { ThirdPageComponent } from './book/pages/third-page/third-page.component';
+import { FourthPageComponent } from './book/pages/fourth-page/fourth-page.component';
+import { FifthPageComponent } from './book/pages/fifth-page/fifth-page.component';
 
 @NgModule({
   declarations: [
