@@ -6,13 +6,12 @@ import { FourthPageComponent } from './pages/fourth-page/fourth-page.component';
 import { SecondPageComponent } from './pages/second-page/second-page.component';
 import { ThirdPageComponent } from './pages/third-page/third-page.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: '1', component: FirstPageComponent },
   { path: '2', component: SecondPageComponent },
   { path: '3', component: ThirdPageComponent },
   { path: '4', component: FourthPageComponent },
   { path: '5', component: FifthPageComponent },
-  { path: '', redirectTo: '1', pathMatch: 'full' },
   { path: '**', redirectTo: '1' },
 ]
 

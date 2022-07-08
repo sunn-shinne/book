@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-pagination',
@@ -7,23 +7,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./pagination.component.css']
 })
 export class PaginationComponent implements OnInit {
-  @Input() pagesCount?: number;
-  selectedPage: number = 1;
-  pagesList: number[] = []
+  pagesCount!: number;
+  pagesList: string[] = [];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+    const routesCount: number | undefined = activatedRoute.routeConfig?.children?.length;
+    this.pagesCount = routesCount ? routesCount - 1 : 0;
+  }
+
+  createList(count: number): string[] {
+    return Array(count).fill(0).map((e, i) => (i + 1).toString());
+  }
 
   ngOnInit(): void {
-    this.pagesList = Array(this.pagesCount).fill(0).map((e, i) => i + 1);
-  }
-
-  ngDoCheck() {
-    this.setSelectedPage();
-  }
-
-  setSelectedPage() {
-    const splitedUrl = this.router.url.split('/');
-    const currentPage = Number(splitedUrl[splitedUrl.length - 1])
-    this.selectedPage = currentPage;
+    this.pagesList = this.createList(this.pagesCount)
   }
 }
