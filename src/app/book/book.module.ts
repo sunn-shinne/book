@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ContentComponent } from './content/content.component';
 import { FirstPageComponent } from './pages/first-page/first-page.component';
 import { SecondPageComponent } from './pages/second-page/second-page.component';
 import { ThirdPageComponent } from './pages/third-page/third-page.component';
@@ -13,7 +12,6 @@ import { BookRoutingModule } from './book-routing.module';
 
 @NgModule({
   declarations: [
-    ContentComponent,
     FirstPageComponent,
     SecondPageComponent,
     ThirdPageComponent,
@@ -26,8 +24,12 @@ import { BookRoutingModule } from './book-routing.module';
     BookRoutingModule,
   ],
   exports: [
-    ContentComponent,
-    PaginationComponent
+    PaginationComponent,
+    FirstPageComponent,
+    SecondPageComponent,
+    ThirdPageComponent,
+    FourthPageComponent,
+    FifthPageComponent,
   ]
 })
 export class BookModule { }

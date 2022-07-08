@@ -7,20 +7,17 @@ import { SecondPageComponent } from './pages/second-page/second-page.component';
 import { ThirdPageComponent } from './pages/third-page/third-page.component';
 
 const routes: Routes = [
-  {
-    path: 'book', children: [
-      { path: '1', component: FirstPageComponent },
-      { path: '2', component: SecondPageComponent },
-      { path: '3', component: ThirdPageComponent },
-      { path: '4', component: FourthPageComponent },
-      { path: '5', component: FifthPageComponent },
-      { path: '', redirectTo: '1', pathMatch: 'full' },
-    ]
-  },
-];
+  { path: '1', component: FirstPageComponent },
+  { path: '2', component: SecondPageComponent },
+  { path: '3', component: ThirdPageComponent },
+  { path: '4', component: FourthPageComponent },
+  { path: '5', component: FifthPageComponent },
+  { path: '', redirectTo: '1', pathMatch: 'full' },
+  { path: '**', redirectTo: '1' },
+]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class BookRoutingModule { }
