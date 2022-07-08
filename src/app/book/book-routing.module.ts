@@ -13,10 +13,10 @@ export const routes: Routes = [
   { path: '4', component: FourthPageComponent },
   { path: '5', component: FifthPageComponent },
   { path: '**', redirectTo: '1' },
-]
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class BookRoutingModule { }
+export class BookRoutingModule {}

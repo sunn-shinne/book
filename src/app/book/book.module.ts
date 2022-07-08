@@ -8,8 +8,6 @@ import { FifthPageComponent } from './pages/fifth-page/fifth-page.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { BookRoutingModule } from './book-routing.module';
 
-
-
 @NgModule({
   declarations: [
     FirstPageComponent,
@@ -19,17 +17,7 @@ import { BookRoutingModule } from './book-routing.module';
     FifthPageComponent,
     PaginationComponent,
   ],
-  imports: [
-    CommonModule,
-    BookRoutingModule,
-  ],
-  exports: [
-    PaginationComponent,
-    FirstPageComponent,
-    SecondPageComponent,
-    ThirdPageComponent,
-    FourthPageComponent,
-    FifthPageComponent,
-  ]
+  imports: [CommonModule, BookRoutingModule],
+  exports: [PaginationComponent],
 })
-export class BookModule { }
+export class BookModule {}

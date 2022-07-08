@@ -15,12 +15,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     NotFoundComponent,
     MainComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BookModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule, BookModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

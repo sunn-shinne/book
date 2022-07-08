@@ -7,14 +7,15 @@ import { routes as bookRoutes } from './book/book-routing.module';
 const routes: Routes = [
   { path: '', redirectTo: '/book/1', pathMatch: 'full' },
   {
-    path: 'book', children: bookRoutes,
-    component: MainComponent
+    path: 'book',
+    children: bookRoutes,
+    component: MainComponent,
   },
   { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

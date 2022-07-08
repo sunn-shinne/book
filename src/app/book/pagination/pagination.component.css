@@ -18,7 +18,7 @@
 }
 
 .selected {
-  color: var(--white); 
+  color: var(--white);
   background-color: var(--violet);
 }
 
@@ -26,8 +26,8 @@
   background-color: var(--violet);
 }
 
-.pagination-link:not(.selected){
-  color: var(--black)
+.pagination-link:not(.selected) {
+  color: var(--black);
 }
 
 .pagination-link:not(.selected):hover {
