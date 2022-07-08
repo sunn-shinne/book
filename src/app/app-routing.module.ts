@@ -4,7 +4,7 @@ import { MainComponent } from './main/main.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/book', pathMatch: 'full' },
+  { path: '', redirectTo: '/book/1', pathMatch: 'full' },
   {
     path: 'book', loadChildren: () =>
       import('./book/book.module').then((m) => m.BookModule),

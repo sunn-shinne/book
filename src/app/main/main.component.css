@@ -3,3 +3,9 @@
   margin: 0 auto;
   padding: 24px 40px 18px
 }
+
+app-main {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}

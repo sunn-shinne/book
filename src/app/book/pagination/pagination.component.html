@@ -1,6 +1,5 @@
 <section class="pagination">
-  <a routerLink="{{pageNum}}" *ngFor="let pageNum of pagesList"
-    [ngClass]="{'pagination-link': true, 'selected': selectedPage === pageNum}">
+  <a routerLink="{{pageNum}}" *ngFor="let pageNum of pagesList" class="pagination-link" routerLinkActive="selected">
     {{pageNum}}
   </a>
 </section>
