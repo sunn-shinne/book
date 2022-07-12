@@ -1,0 +1,12 @@
+.content {
+  width: 765px;
+  margin: 0 auto;
+  padding: 24px 40px 18px
+}
+
+.pagination {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  left: 0;
+}
