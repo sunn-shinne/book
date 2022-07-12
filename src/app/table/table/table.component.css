@@ -20,26 +20,13 @@ tr.element-row:not(.expanded-row):active {
 
 .element-detail {
   overflow: hidden;
-  display: flex;
-}
-
-.element-diagram {
-  min-width: 80px;
-  font-weight: lighter;
-  margin: 8px 0;
-  height: 104px;
-}
-
-.element-displayedInCell {
-  font-size: 30px;
-  line-height: normal;
+  width: 100%;
 }
 
 .arrow-button {
   border: none;
   background-color: transparent;
 }
-
 
 .button-container {
   padding-bottom: 16px;

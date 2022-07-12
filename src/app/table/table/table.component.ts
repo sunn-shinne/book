@@ -16,8 +16,8 @@ import {
 } from '@angular/animations';
 import * as _ from 'lodash';
 
-interface ExpandedElement extends Data {
-  extendedData: ExtendedData;
+interface FullElement extends Data {
+  extendedData: ExtendedData[];
 }
 
 @Component({
@@ -36,21 +36,25 @@ interface ExpandedElement extends Data {
   ],
 })
 export class TableComponent implements OnInit {
-  currentData = DATA.map((item: Data, i: number) => ({
-    ...item,
-    extendedData: EXTENDED_DATA[i],
-  }));
-  dataSource = new MatTableDataSource(this.currentData);
+  fullData!: FullElement[];
+  dataSource!: MatTableDataSource<FullElement>;
+
   displayColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   displayColumnsWithExpand = [...this.displayColumns, 'expand'];
-  expandedElement!: ExpandedElement | null;
+  expandedElement!: FullElement | null;
 
   constructor(private _liveAnnouncer: LiveAnnouncer) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.fullData = DATA.map((item: Data) => ({
+      ...item,
+      extendedData: EXTENDED_DATA,
+    }));
+    this.dataSource = new MatTableDataSource(this.fullData);
+  }
 
   @ViewChild(MatSort) sort!: MatSort;
-  @ViewChild(MatTable) table!: MatTable<ExpandedElement>;
+  @ViewChild(MatTable) table!: MatTable<Element>;
 
   initSort() {
     this.dataSource.sort = this.sort;
@@ -69,17 +73,17 @@ export class TableComponent implements OnInit {
   }
 
   addData() {
-    const randomElIndex = Math.floor(Math.random() * this.currentData.length);
-    const randomItem = _.cloneDeep(this.currentData[randomElIndex]);
-    this.currentData.push(randomItem);
-    this.dataSource = new MatTableDataSource(this.currentData);
+    const randomElIndex = Math.floor(Math.random() * this.fullData.length);
+    const randomItem = _.cloneDeep(this.fullData[randomElIndex]);
+    this.fullData.push(randomItem);
+    this.dataSource = new MatTableDataSource(this.fullData);
     this.table.renderRows();
     this.initSort();
   }
 
   removeData() {
-    this.currentData.pop();
-    this.dataSource = new MatTableDataSource(this.currentData);
+    this.fullData.pop();
+    this.dataSource = new MatTableDataSource(this.fullData);
     this.table.renderRows();
     this.initSort();
   }
