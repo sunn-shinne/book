@@ -1,3 +1,62 @@
 table {
   width: 100%;
 }
+
+tr.detail-row {
+  height: 0;
+}
+
+tr.element-row:not(.expanded-row):hover {
+  background: whitesmoke;
+}
+
+tr.element-row:not(.expanded-row):active {
+  background: #efefef;
+}
+
+.element-row td {
+  border-bottom-width: 0;
+}
+
+.element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.element-diagram {
+  min-width: 80px;
+  font-weight: lighter;
+  margin: 8px 0;
+  height: 104px;
+}
+
+.element-displayedInCell {
+  font-size: 30px;
+  line-height: normal;
+}
+
+.arrow-button {
+  border: none;
+  background-color: transparent;
+}
+
+
+.button-container {
+  padding-bottom: 16px;
+}
+
+.button-container button {
+  font-size: 15px;
+  padding: 10px 15px;
+  border: none;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.button-container button:not([disabled]):hover {
+  color: var(--white);
+  background-color: var(--violet);
+}
+
+.remove-item-button {
+  margin-left: 15px;
+}
