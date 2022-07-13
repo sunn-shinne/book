@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-auth',
@@ -27,7 +28,7 @@ export class AuthComponent implements OnInit {
     ]),
   });
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit() {
     this.activeUrl = this.router.url;
@@ -37,11 +38,13 @@ export class AuthComponent implements OnInit {
     e.preventDefault();
     console.log(this.signupForm.getRawValue());
     this.signupForm.reset();
+    this.authService.someRequest();
   }
 
   login(e: SubmitEvent) {
     e.preventDefault();
     console.log(this.loginForm.getRawValue());
     this.loginForm.reset();
+    this.authService.someRequest();
   }
 }
