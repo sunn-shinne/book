@@ -18,7 +18,11 @@ const routes: Routes = [
     component: TabelPageComponent,
   },
   {
-    path: 'auth',
+    path: 'signup',
+    component: AuthComponent,
+  },
+  {
+    path: 'login',
     component: AuthComponent,
   },
   { path: '**', component: NotFoundComponent },

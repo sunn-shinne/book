@@ -20,7 +20,7 @@ section {
   box-shadow: 5px 5px 20px rgba(0, 0, 0, .5)
 }
 
-.auth-form {
+.form {
   height: 520px;
   width: 430px;
 
@@ -41,19 +41,19 @@ section {
   box-sizing: border-box;
 }
 
-.auth-form h1 {
+.form h1 {
   margin-bottom: 10px;
   
   font-size: 35px;
 }
 
-.auth-form p {
+.form p {
   margin-bottom: 40px;
   font-weight: 500;
   font-size: 12px;
 }
 
-.auth-form a {
+.form a {
   color: #62FFB4;
   cursor: pointer;
 }
@@ -75,7 +75,7 @@ section {
 .form-control-input {
   height: 25px;
   width: 100%;
-  padding: 5px 10px;
+  padding: 0;
 
   color: var(--white);
 
@@ -110,4 +110,8 @@ section {
   border-radius: 10px;
   border: none;
   cursor: pointer;
+}
+
+.form-button:hover {
+  background-color: #2ce089;
 }
