@@ -10,6 +10,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { TabelPageComponent } from './tabel-page/tabel-page.component';
 import { TableModule } from './table/table.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NotFoundComponent,
     BookPageComponent,
     TabelPageComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,

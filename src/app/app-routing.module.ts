@@ -4,6 +4,7 @@ import { BookPageComponent } from './book-page/book-page.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { routes as bookRoutes } from './book/book-routing.module';
 import { TabelPageComponent } from './tabel-page/tabel-page.component';
+import { AuthComponent } from './auth/auth.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/book/1', pathMatch: 'full' },
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'table',
     component: TabelPageComponent,
+  },
+  {
+    path: 'auth',
+    component: AuthComponent,
   },
   { path: '**', component: NotFoundComponent },
 ];
