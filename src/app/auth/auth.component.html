@@ -1,36 +1,60 @@
 <section>
   <div class="auth">
 
-    <form class="form" *ngIf="activeUrl === '/signup'">
+    <form
+      class="form"
+      *ngIf="activeUrl === '/signup'"
+      [formGroup]="signupForm"
+      (submit)="signup($event)"
+      autocomplete="off"
+      novalidate
+    >
       <h1>Регистрация</h1>
       <p>Уже есть аккаунт? <a routerLink="/login">Войти</a></p>
       <div class="form-control">
         <label for="name" class="form-control-label">Name</label>
-        <input id="name" type="text" class="form-control-input">
+        <input id="name" type="text" class="form-control-input" formControlName="name">
       </div>
+      <span class="error-message" *ngIf="signupForm.get('name')?.hasError('required') && signupForm.get('name')?.touched">Обязательное поле</span>
+      <span class="error-message" *ngIf="signupForm.get('name')?.hasError('minlength') && signupForm.get('name')?.touched">Минимальная длина 3 символа</span>
       <div class="form-control">
         <label for="email" class="form-control-label">Email</label>
-        <input id="email" type="email" class="form-control-input">
+        <input id="email" type="email" class="form-control-input" formControlName="email">
       </div>
+      <span class="error-message" *ngIf="signupForm.get('email')?.hasError('required') && signupForm.get('email')?.touched">Обязательное поле</span>
+      <span class="error-message" *ngIf="signupForm.get('email')?.hasError('email') && signupForm.get('email')?.touched">Невалидный email</span>
       <div class="form-control">
         <label for="password" class="form-control-label">Password</label>
-        <input id="password" type="password" class="form-control-input">
+        <input id="password" type="password" class="form-control-input" formControlName="password">
       </div>
-      <button type="submit" class="form-button">Зарегистрироваться</button>
+      <span class="error-message" *ngIf="signupForm.get('password')?.hasError('required') && signupForm.get('password')?.touched">Обязательное поле</span>
+      <span class="error-message" *ngIf="signupForm.get('password')?.hasError('minlength') && signupForm.get('password')?.touched">Минимальная длина 6 символов</span>
+      <button type="submit" class="form-button" [disabled]="!signupForm.valid">Зарегистрироваться</button>
     </form>
 
-    <form class="form" *ngIf="activeUrl === '/login'">
+    <form
+      class="form"
+      *ngIf="activeUrl === '/login'"
+      [formGroup]="loginForm"
+      (submit)="login($event)"
+      autocomplete="off"
+      novalidate
+    >
       <h1>Вход</h1>
       <p>Ещё нет аккаунта? <a routerLink="/signup">Зарегистрироваться</a></p>
       <div class="form-control">
         <label for="email" class="form-control-label">Email</label>
-        <input id="email" type="email" class="form-control-input">
+        <input id="email" type="email" class="form-control-input" formControlName="email">
       </div>
+      <span class="error-message" *ngIf="loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched">Обязательное поле</span>
+      <span class="error-message" *ngIf="loginForm.get('email')?.hasError('email') && loginForm.get('email')?.touched">Невалидный email</span>
       <div class="form-control">
         <label for="password" class="form-control-label">Password</label>
-        <input id="password" type="password" class="form-control-input">
+        <input id="password" type="password" class="form-control-input" formControlName="password">
       </div>
-      <button type="submit" class="form-button">Войти</button>
+      <span class="error-message" *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched">Обязательное поле</span>
+      <span class="error-message" *ngIf="loginForm.get('password')?.hasError('minlength') && loginForm.get('password')?.touched">Минимальная длина 6 символов</span>
+      <button type="submit" class="form-button" [disabled]="!loginForm.valid">Войти</button>
     </form>
 
   </div>
