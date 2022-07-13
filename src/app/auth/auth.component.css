@@ -34,7 +34,6 @@ section {
   width: 500px;
 
   background: url("../../assets/images/auth/leaf.png") center / contain no-repeat;
-  background-size: 100%;
   content: "";
 }
 
