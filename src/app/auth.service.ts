@@ -8,8 +8,6 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   someRequest() {
-    this.http.get('httрs://ya.ru/').subscribe({
-      error: () => console.log('Am I a mock or not?..'),
-    });
+    return this.http.get('httрs://ya.ru/');
   }
 }

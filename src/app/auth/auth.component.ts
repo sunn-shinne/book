@@ -45,6 +45,8 @@ export class AuthComponent implements OnInit {
     e.preventDefault();
     console.log(this.loginForm.getRawValue());
     this.loginForm.reset();
-    this.authService.someRequest();
+    this.authService.someRequest().subscribe({
+      error: () => console.log('Am I a mock or not?..'),
+    });
   }
 }
