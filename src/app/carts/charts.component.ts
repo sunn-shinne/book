@@ -77,6 +77,9 @@ export class ChartsComponent implements OnInit {
             tension: 0.5,
             datalabels: {
               align: 'bottom',
+              padding: {
+                bottom: 0,
+              },
               formatter: (value) => value.qty_shk_cat1,
             },
           },
@@ -130,6 +133,9 @@ export class ChartsComponent implements OnInit {
           datalabels: {
             anchor: 'start',
             align: -45,
+            padding: {
+              bottom: 15,
+            },
           },
         },
         scales: {
