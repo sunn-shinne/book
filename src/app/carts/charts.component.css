@@ -8,3 +8,36 @@
   display: block;
   margin-bottom: 50px;
 }
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.error-message {
+  font-size: 20px;
+  color: var(--violet);
+  text-transform: uppercase;
+
+  margin: 30px 0 15px 0;
+}
+
+.error-button {
+  padding: 10px 20px;
+
+  font-size: 15px;
+  color: var(--white);
+
+  background-color: var(--violet); 
+
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.error-button:hover {
+  background-color: rgb(160, 97, 197);
+}

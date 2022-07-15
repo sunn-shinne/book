@@ -1,6 +1,13 @@
 <app-header></app-header>
-<section class="content">
+<section *ngIf="!isError; else error" class="content">
   <h2>{{officeName}}</h2>
   <app-line-chart class="line-chart" [data]="data"></app-line-chart>
   <app-pie-chart class="pie-chart" [data]="data"></app-pie-chart>
 </section>
+
+<ng-template #error>
+  <section class="error-container">
+    <p class="error-message">Ой, ошибка...</p>
+    <button class="error-button" (click)="reloadPage()">Попробовать еще раз</button>
+  </section>
+</ng-template>

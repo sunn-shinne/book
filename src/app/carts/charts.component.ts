@@ -10,13 +10,23 @@ import { ChartsService } from './charts.service';
 export class ChartsComponent implements OnInit {
   data!: CartData[];
   officeName!: string;
+  isError = false;
 
   constructor(private chartsService: ChartsService) {}
 
   ngOnInit(): void {
-    this.chartsService.getData().subscribe((data) => {
-      this.data = data;
-      this.officeName = data[0].office_name;
+    this.chartsService.getData().subscribe({
+      next: (data) => {
+        this.data = data;
+        this.officeName = data[0].office_name;
+      },
+      error: () => {
+        this.isError = true;
+      },
     });
+  }
+
+  reloadPage() {
+    window.location.reload();
   }
 }
