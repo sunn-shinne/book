@@ -14,15 +14,15 @@ export class PieChartComponent {
 
   constructor() {}
 
-  reduceData(data: CartData[]): number[] {
-    const resArr = [0, 0, 0, 0];
+  reduceDataforCart(data: CartData[]): number[] {
+    const res = [0, 0, 0, 0];
     data.forEach((item) => {
-      resArr[0] += item.qty_shk_cat1;
-      resArr[1] += item.qty_shk_cat2;
-      resArr[2] += item.qty_shk_cat3;
-      resArr[3] += item.qty_shk_cat4;
+      res[0] += item.qty_shk_cat1;
+      res[1] += item.qty_shk_cat2;
+      res[2] += item.qty_shk_cat3;
+      res[3] += item.qty_shk_cat4;
     });
-    return resArr;
+    return res;
   }
 
   ngAfterViewInit(): void {
@@ -33,7 +33,7 @@ export class PieChartComponent {
           labels: ['Этап 1', 'Этап 2', 'Этап 3', 'Этап 4'],
           datasets: [
             {
-              data: this.reduceData(this.data),
+              data: this.reduceDataforCart(this.data),
               backgroundColor: [
                 'rgb(230, 255, 3)',
                 'rgb(47, 224, 86)',
