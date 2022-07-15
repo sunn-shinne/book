@@ -14,8 +14,6 @@ import { AuthComponent } from './auth/auth.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ChartsComponent } from './carts/charts.component';
-import { LineChartComponent } from './carts/line-chart/line-chart.component';
-import { PieChartComponent } from './carts/pie-chart/pie-chart.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +24,6 @@ import { PieChartComponent } from './carts/pie-chart/pie-chart.component';
     TabelPageComponent,
     AuthComponent,
     ChartsComponent,
-    LineChartComponent,
-    PieChartComponent,
   ],
   imports: [
     BrowserModule,
