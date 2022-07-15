@@ -33,7 +33,7 @@ export class PieChartComponent {
           labels: ['Этап 1', 'Этап 2', 'Этап 3', 'Этап 4'],
           datasets: [
             {
-              data: this.reduceDataforCart(this.data),
+              data: this.reduceDataforCart(this.data as []),
               backgroundColor: [
                 'rgb(230, 255, 3)',
                 'rgb(47, 224, 86)',

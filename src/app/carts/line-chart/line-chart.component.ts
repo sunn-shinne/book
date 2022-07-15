@@ -16,14 +16,15 @@ export class LineChartComponent {
 
   ngAfterViewInit(): void {
     setTimeout(() => {
+      const chartData = this.data as [];
       this.lineChart = new Chart(this.lineChartRef.nativeElement, {
         type: 'line',
         data: {
-          labels: this.data.map((item) => item.dt_date).sort(),
+          labels: chartData.map((item: CartData) => item.dt_date).sort(),
           datasets: [
             {
               label: 'Всего',
-              data: this.data as [],
+              data: chartData,
               parsing: {
                 xAxisKey: 'dt_date',
                 yAxisKey: 'qty_shk',
@@ -34,7 +35,7 @@ export class LineChartComponent {
             },
             {
               label: 'Этап 1',
-              data: this.data as [],
+              data: chartData,
               parsing: {
                 xAxisKey: 'dt_date',
                 yAxisKey: 'qty_shk_cat1',
@@ -45,7 +46,7 @@ export class LineChartComponent {
             },
             {
               label: 'Этап 2',
-              data: this.data as [],
+              data: chartData,
               parsing: {
                 xAxisKey: 'dt_date',
                 yAxisKey: 'qty_shk_cat2',
@@ -56,7 +57,7 @@ export class LineChartComponent {
             },
             {
               label: 'Этап 3',
-              data: this.data as [],
+              data: chartData,
               parsing: {
                 xAxisKey: 'dt_date',
                 yAxisKey: 'qty_shk_cat3',
@@ -67,7 +68,7 @@ export class LineChartComponent {
             },
             {
               label: 'Этап 4',
-              data: this.data as [],
+              data: chartData,
               parsing: {
                 xAxisKey: 'dt_date',
                 yAxisKey: 'qty_shk_cat4',
