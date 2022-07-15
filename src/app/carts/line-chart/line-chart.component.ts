@@ -5,7 +5,7 @@ import Chart from 'chart.js/auto';
 @Component({
   selector: 'app-line-chart',
   templateUrl: './line-chart.component.html',
-  styleUrls: ['./line-chart.component.css'],
+  styleUrls: [],
 })
 export class LineChartComponent {
   @Input() data!: CartData[];

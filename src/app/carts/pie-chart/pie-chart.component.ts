@@ -5,7 +5,7 @@ import Chart from 'chart.js/auto';
 @Component({
   selector: 'app-pie-chart',
   templateUrl: './pie-chart.component.html',
-  styleUrls: ['./pie-chart.component.css'],
+  styleUrls: [],
 })
 export class PieChartComponent {
   @Input() data!: CartData[];
