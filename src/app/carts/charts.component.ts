@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CartData } from 'src/interfaces/ChartData';
-import { ChartsService } from '../charts.service';
+import { ChartsService } from './charts.service';
 
 @Component({
   selector: 'app-charts',

@@ -29,7 +29,7 @@ export class LineChartComponent {
                 yAxisKey: 'qty_shk',
               },
               backgroundColor: 'rgba(224, 47, 47, .8)',
-              borderColor: 'rgba(224, 47, 47, .8)',
+              borderColor: 'rgb(224, 47, 47)',
               tension: 0.5,
             },
             {
@@ -40,7 +40,7 @@ export class LineChartComponent {
                 yAxisKey: 'qty_shk_cat1',
               },
               backgroundColor: 'rgba(230, 255, 3, .8)',
-              borderColor: 'rgba(230, 255, 3, .8)',
+              borderColor: 'rgb(230, 255, 3)',
               tension: 0.5,
             },
             {
@@ -51,7 +51,7 @@ export class LineChartComponent {
                 yAxisKey: 'qty_shk_cat2',
               },
               backgroundColor: 'rgba(47, 224, 86, .8)',
-              borderColor: 'rgba(47, 224, 86, .8)',
+              borderColor: 'rgb(47, 224, 86)',
               tension: 0.5,
             },
             {
@@ -62,7 +62,7 @@ export class LineChartComponent {
                 yAxisKey: 'qty_shk_cat3',
               },
               backgroundColor: 'rgba(50, 47, 224, .8)',
-              borderColor: 'rgba(50, 47, 224, .8)',
+              borderColor: 'rgb(50, 47, 224)',
               tension: 0.5,
             },
             {
@@ -73,7 +73,7 @@ export class LineChartComponent {
                 yAxisKey: 'qty_shk_cat4',
               },
               backgroundColor: 'rgba(145, 47, 224, .8)',
-              borderColor: 'rgba(145, 47, 224, .8)',
+              borderColor: 'rgb(145, 47, 224)',
               tension: 0.5,
             },
           ],

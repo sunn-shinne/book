@@ -3,3 +3,8 @@
   margin: 0 auto;
   padding: 24px 40px 18px
 }
+
+.line-chart {
+  display: block;
+  margin-bottom: 50px;
+}
