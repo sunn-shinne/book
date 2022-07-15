@@ -3,6 +3,7 @@ import Chart from 'chart.js/auto';
 import { registerables } from 'chart.js';
 import { ChartData } from 'src/interfaces/ChartData';
 import { ChartsService } from './charts.service';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 @Component({
   selector: 'app-charts',
@@ -60,6 +61,9 @@ export class ChartsComponent implements OnInit {
             backgroundColor: 'rgba(224, 47, 47, .8)',
             borderColor: 'rgb(224, 47, 47)',
             tension: 0.5,
+            datalabels: {
+              formatter: (value) => value.qty_shk,
+            },
           },
           {
             label: 'Этап 1',
@@ -71,6 +75,10 @@ export class ChartsComponent implements OnInit {
             backgroundColor: 'rgba(230, 255, 3, .8)',
             borderColor: 'rgb(230, 255, 3)',
             tension: 0.5,
+            datalabels: {
+              align: 'bottom',
+              formatter: (value) => value.qty_shk_cat1,
+            },
           },
           {
             label: 'Этап 2',
@@ -82,6 +90,9 @@ export class ChartsComponent implements OnInit {
             backgroundColor: 'rgba(47, 224, 86, .8)',
             borderColor: 'rgb(47, 224, 86)',
             tension: 0.5,
+            datalabels: {
+              formatter: (value) => value.qty_shk_cat2,
+            },
           },
           {
             label: 'Этап 3',
@@ -93,6 +104,9 @@ export class ChartsComponent implements OnInit {
             backgroundColor: 'rgba(50, 47, 224, .8)',
             borderColor: 'rgb(50, 47, 224)',
             tension: 0.5,
+            datalabels: {
+              formatter: (value) => value.qty_shk_cat3,
+            },
           },
           {
             label: 'Этап 4',
@@ -104,10 +118,20 @@ export class ChartsComponent implements OnInit {
             backgroundColor: 'rgba(145, 47, 224, .8)',
             borderColor: 'rgb(145, 47, 224)',
             tension: 0.5,
+            datalabels: {
+              formatter: (value) => value.qty_shk_cat4,
+            },
           },
         ],
       },
+      plugins: [ChartDataLabels],
       options: {
+        plugins: {
+          datalabels: {
+            anchor: 'start',
+            align: -45,
+          },
+        },
         scales: {
           y: {
             min: 0,
