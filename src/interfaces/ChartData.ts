@@ -1,4 +1,4 @@
-export interface CartData {
+export interface ChartData {
   dt_date: string;
   office_id: number;
   office_name: string;

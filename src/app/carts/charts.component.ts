@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { CartData } from 'src/interfaces/ChartData';
+import { ChartData } from 'src/interfaces/ChartData';
 import { ChartsService } from './charts.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { ChartsService } from './charts.service';
   styleUrls: ['./charts.component.css'],
 })
 export class ChartsComponent implements OnInit {
-  data!: CartData[];
+  data!: ChartData[];
   officeName!: string;
   isError = false;
 

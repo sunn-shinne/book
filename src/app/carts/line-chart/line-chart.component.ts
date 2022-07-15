@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { CartData } from 'src/interfaces/ChartData';
+import { ChartData } from 'src/interfaces/ChartData';
 import Chart from 'chart.js/auto';
 
 @Component({
@@ -8,7 +8,7 @@ import Chart from 'chart.js/auto';
   styleUrls: [],
 })
 export class LineChartComponent {
-  @Input() data!: CartData[];
+  @Input() data!: ChartData[];
   @ViewChild('line_chart') lineChartRef!: ElementRef;
   lineChart!: Chart;
 
@@ -20,7 +20,7 @@ export class LineChartComponent {
       this.lineChart = new Chart(this.lineChartRef.nativeElement, {
         type: 'line',
         data: {
-          labels: chartData.map((item: CartData) => item.dt_date).sort(),
+          labels: chartData.map((item: ChartData) => item.dt_date).sort(),
           datasets: [
             {
               label: 'Всего',

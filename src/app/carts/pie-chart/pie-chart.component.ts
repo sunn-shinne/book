@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { CartData } from 'src/interfaces/ChartData';
+import { ChartData } from 'src/interfaces/ChartData';
 import Chart from 'chart.js/auto';
 
 @Component({
@@ -8,13 +8,13 @@ import Chart from 'chart.js/auto';
   styleUrls: [],
 })
 export class PieChartComponent {
-  @Input() data!: CartData[];
+  @Input() data!: ChartData[];
   @ViewChild('pie_chart') pieChartRef!: ElementRef;
   pieChart!: Chart;
 
   constructor() {}
 
-  reduceDataforCart(data: CartData[]): number[] {
+  reduceDataforCart(data: ChartData[]): number[] {
     const res = [0, 0, 0, 0];
     data.forEach((item) => {
       res[0] += item.qty_shk_cat1;
