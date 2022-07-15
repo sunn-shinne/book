@@ -1,8 +1,12 @@
 <app-header></app-header>
 <section *ngIf="!isError; else error" class="content">
   <h2>{{officeName}}</h2>
-  <canvas #line_chart class="line-chart" width="600" height="200"></canvas>
-  <canvas #pie_chart></canvas>
+  <div class="line-chart">
+    <canvas #line_chart width="600" height="200"></canvas>
+  </div>
+  <div class="pie-chart">
+    <canvas #pie_chart></canvas>
+  </div>
 </section>
 
 <ng-template #error>
