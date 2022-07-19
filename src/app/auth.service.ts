@@ -78,10 +78,16 @@ export class AuthService {
   }
 
   SignOut() {
-    return this.afAuth.signOut().then(() => {
-      localStorage.removeItem('user');
-      this.router.navigate(['login']);
-    });
+    return this.afAuth
+      .signOut()
+      .then(() => {
+        localStorage.removeItem('user');
+        this.router.navigate(['login']);
+      })
+      .catch((error) => {
+        console.log(error);
+        throw error;
+      });
   }
 
   async SetUserName(displayName: string) {

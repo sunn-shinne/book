@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
   logout() {
-    this.authService.SignOut().catch((error) => console.log(error));
+    this.authService.SignOut();
   }
 
   ngOnInit(): void {}
