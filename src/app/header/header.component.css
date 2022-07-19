@@ -23,6 +23,15 @@
   cursor: pointer;
 }
 
+.logout {
+  font-size: 16px;
+  margin-left: 30px;
+  padding: 3px 10px 5px;
+
+  border: 1px solid var(--border-light);
+  border-radius: 5px;
+}
+
 .selected {
   color: var(--violet);
 }

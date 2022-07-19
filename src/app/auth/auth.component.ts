@@ -10,6 +10,8 @@ import { AuthService } from '../auth.service';
 })
 export class AuthComponent implements OnInit {
   activeUrl!: string;
+  authProccessState = 'entering';
+  errorMessage: string | null = null;
 
   signupForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
@@ -36,17 +38,36 @@ export class AuthComponent implements OnInit {
 
   signup(e: SubmitEvent) {
     e.preventDefault();
-    console.log(this.signupForm.getRawValue());
-    this.signupForm.reset();
-    this.authService.someRequest();
+    const { email, password, name } = this.signupForm.getRawValue();
+    this.authProccessState = 'loading';
+
+    this.authService
+      .SignUp(email!, password!)
+      .then(() => {
+        this.authProccessState = 'fulfilled';
+        this.errorMessage = null;
+      })
+      .then(() => this.authService.SetUserName(name!))
+      .catch((e) => {
+        this.authProccessState = 'failed';
+        this.errorMessage = this.authService.GetErrorMessage(e.code);
+      });
   }
 
   login(e: SubmitEvent) {
     e.preventDefault();
-    console.log(this.loginForm.getRawValue());
-    this.loginForm.reset();
-    this.authService.someRequest().subscribe({
-      error: () => console.log('Am I a mock or not?..'),
-    });
+    const { email, password } = this.loginForm.getRawValue();
+    this.authProccessState = 'loading';
+
+    this.authService
+      .SignIn(email!, password!)
+      .then(() => {
+        this.authProccessState = 'fulfilled';
+        this.errorMessage = null;
+      })
+      .catch((e) => {
+        this.authProccessState = 'failed';
+        this.errorMessage = this.authService.GetErrorMessage(e.code);
+      });
   }
 }

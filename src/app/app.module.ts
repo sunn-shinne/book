@@ -10,10 +10,18 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { TabelPageComponent } from './tabel-page/tabel-page.component';
 import { TableModule } from './table/table.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AuthComponent } from './auth/auth.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ChartsComponent } from './carts/charts.component';
+
+import { AuthService } from './auth.service';
+import { AuthComponent } from './auth/auth.component';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 
 @NgModule({
   declarations: [
@@ -33,8 +41,13 @@ import { ChartsComponent } from './carts/charts.component';
     TableModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
