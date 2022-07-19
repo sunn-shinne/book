@@ -25,7 +25,6 @@ export class ChartsComponent implements OnInit {
   ngOnInit(): void {
     this.chartsService.getData().subscribe({
       next: (data) => {
-        console.log(data);
         this.data = data;
         this.officeName = data[0].office_name;
       },
