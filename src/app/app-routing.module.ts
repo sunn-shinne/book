@@ -9,7 +9,7 @@ import { ChartsComponent } from './carts/charts.component';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/book/1', pathMatch: 'full' },
   {
     path: 'login',
     component: AuthComponent,
