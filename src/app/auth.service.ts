@@ -37,7 +37,7 @@ export class AuthService {
       })
       .catch((error) => {
         console.log(error);
-        throw error;
+        throw new Error(this.GetErrorMessage(error.code));
       });
   }
 
@@ -52,7 +52,7 @@ export class AuthService {
       })
       .catch((error) => {
         console.log(error);
-        throw error;
+        throw new Error(this.GetErrorMessage(error.code));
       });
   }
 
@@ -78,7 +78,7 @@ export class AuthService {
       })
       .catch((error) => {
         console.log(error);
-        throw error;
+        throw new Error(this.GetErrorMessage(error.code));
       });
   }
 
@@ -101,7 +101,7 @@ export class AuthService {
       })
       .catch((error) => {
         console.log(error);
-        throw error;
+        throw new Error(this.GetErrorMessage(error.code));
       });
   }
 

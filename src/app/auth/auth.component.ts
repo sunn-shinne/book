@@ -50,7 +50,7 @@ export class AuthComponent implements OnInit {
       .then(() => this.authService.SetUserName(name!))
       .catch((e) => {
         this.authProccessState = 'failed';
-        this.errorMessage = this.authService.GetErrorMessage(e.code);
+        this.errorMessage = e.message;
       });
   }
 
@@ -67,7 +67,7 @@ export class AuthComponent implements OnInit {
       })
       .catch((e) => {
         this.authProccessState = 'failed';
-        this.errorMessage = this.authService.GetErrorMessage(e.code);
+        this.errorMessage = e.message;
       });
   }
 
@@ -81,7 +81,7 @@ export class AuthComponent implements OnInit {
       })
       .catch((e) => {
         this.authProccessState = 'failed';
-        this.errorMessage = this.authService.GetErrorMessage(e.code);
+        this.errorMessage = e.message;
       });
   }
 }
