@@ -70,4 +70,18 @@ export class AuthComponent implements OnInit {
         this.errorMessage = this.authService.GetErrorMessage(e.code);
       });
   }
+
+  loginWithGoogle() {
+    this.authProccessState = 'loading';
+    this.authService
+      .GoogleAuth()
+      .then(() => {
+        this.authProccessState = 'fulfilled';
+        this.errorMessage = null;
+      })
+      .catch((e) => {
+        this.authProccessState = 'failed';
+        this.errorMessage = this.authService.GetErrorMessage(e.code);
+      });
+  }
 }

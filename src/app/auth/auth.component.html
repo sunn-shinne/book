@@ -63,7 +63,13 @@
       <span class="error-message" *ngIf="loginForm.get('password')?.hasError('minlength') && loginForm.get('password')?.touched">Минимальная длина 6 символов</span>
 
       <button type="submit" class="form-button" [disabled]="!loginForm.valid || authProccessState === 'loading'">Войти</button>
-      <span class="error-message" *ngIf="authProccessState === 'failed'">{{errorMessage}}</span>
+      
+      <div class="anther-auth">
+        <p class="login-with">Или войдите с помощью</p>
+        <button class="google-auth" (click)="loginWithGoogle()" [disabled]="authProccessState === 'loading'"></button>
+      </div>
+
+      <span class="error-message request-error-message" *ngIf="authProccessState === 'failed'">{{errorMessage}}</span>
     </form>
 
   </div>

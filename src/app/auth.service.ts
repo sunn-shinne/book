@@ -5,6 +5,7 @@ import {
   AngularFirestore,
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
+import * as auth from 'firebase/auth';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 
@@ -86,6 +87,21 @@ export class AuthService {
       ?.updateProfile({ displayName })
       .then(() => {
         this.SetUserData(this.userData);
+      });
+  }
+
+  GoogleAuth() {
+    return this.afAuth
+      .signInWithPopup(new auth.GoogleAuthProvider())
+      .then((result) => {
+        this.ngZone.run(() => {
+          this.router.navigate(['book/1']);
+        });
+        this.SetUserData(result.user);
+      })
+      .catch((error) => {
+        console.log(error);
+        throw error;
       });
   }
 

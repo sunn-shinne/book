@@ -129,7 +129,8 @@ section {
   margin-bottom: 0;
 }
 
-.request-error {
+.request-error-message {
+  text-align: center;
   font-size: 13px;
   color: #ee4b1a;
 
@@ -156,5 +157,69 @@ section {
 
 .form-button:disabled {
   background-color: #a6e2bd;
+  cursor: not-allowed;
+}
+
+.anther-auth .login-with {
+  position: relative;
+
+  margin: 25px 0 15px;
+}
+
+.login-with::after {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 230px;
+
+  height: 2px;
+
+  background-color: var(--white);
+
+  content: '';
+}
+
+.login-with::before {
+  position: absolute;
+  top: 50%;
+  right: 230px;
+  left: 0;
+
+  height: 2px;
+
+  background-color: var(--white);
+
+  content: '';
+}
+
+.google-auth {
+  position: relative;
+
+  padding: 0;
+
+  background-color: var(--white);
+
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.google-auth::before {
+  display: block;
+  width: 40px;
+  height: 40px;
+
+  background: url("../../assets/images/auth/google-icon.svg") center / 30px no-repeat;
+  border-radius: 10px;
+
+  content: "";
+}
+
+.google-auth:hover {
+  background-color: var(--hover-light);
+}
+
+.google-auth:disabled {
+  background-color: var(--border-light);
   cursor: not-allowed;
 }
