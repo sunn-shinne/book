@@ -8,7 +8,7 @@ import {
 import * as firebase from 'firebase/auth';
 import { User } from '@firebase/auth-types';
 import { Router } from '@angular/router';
-import { Observable, Subject } from 'rxjs';
+import { map, Observable, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 const accessUrls = {
@@ -126,5 +126,9 @@ export class AuthService {
         'Данный email уже используется другим аккаунтом.',
     };
     return requestErrors[errorCode] ?? 'Неизвестная ошибка. Повторите попытку.';
+  }
+
+  isLoggedIn() {
+    return this.afAuth.authState.pipe(map((user) => !!user));
   }
 }

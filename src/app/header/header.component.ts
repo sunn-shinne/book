@@ -7,7 +7,12 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  constructor(private authService: AuthService) {}
+  showLogoutBtn: boolean = false;
+  constructor(private authService: AuthService) {
+    this.authService
+      .isLoggedIn()
+      .subscribe((isLoggedIn) => (this.showLogoutBtn = isLoggedIn));
+  }
 
   logout() {
     this.authService.SignOut();

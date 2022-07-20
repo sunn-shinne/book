@@ -1,14 +1,12 @@
 <header class="header">
   <div class="header-content">
     <img src="../../assets/images/logo.svg" alt="WH School">
-    <!-- <div> -->
+
       <nav>
         <a routerLink="/book" class="nav-item" routerLinkActive="selected">book</a>
         <a routerLink="/table" class="nav-item" routerLinkActive="selected">table</a>
         <a routerLink="/charts" class="nav-item" routerLinkActive="selected">charts</a>
-        <a class="nav-item logout" (click)="logout()">logout</a>
+        <a class="nav-item logout" (click)="logout()" *ngIf="showLogoutBtn">logout</a>
       </nav>
-      <!-- <button (click)="logout()">Выйти</button> -->
-    <!-- </div> -->
   </div>
 </header>
