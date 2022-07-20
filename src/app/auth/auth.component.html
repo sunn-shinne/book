@@ -34,7 +34,7 @@
       <span class="error-message" *ngIf="signupForm.get('password')?.hasError('minlength') && signupForm.get('password')?.touched">Минимальная длина 6 символов</span>
       
       <button type="submit" class="form-button" [disabled]="!signupForm.valid || authProccessState === 'loading'">Зарегистрироваться</button>
-      <span class="error-message request-error" *ngIf="authProccessState === 'failed'">{{errorMessage}}</span>
+      <span class="error-message request-error-message" *ngIf="authProccessState === 'failed'">{{errorMessage}}</span>
     </form>
 
     <form
