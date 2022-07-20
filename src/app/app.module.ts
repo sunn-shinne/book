@@ -12,7 +12,7 @@ import { TableModule } from './table/table.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ChartsComponent } from './carts/charts.component';
+import { ChartsComponent } from './charts/charts.component';
 
 import { AuthService } from './auth.service';
 import { AuthComponent } from './auth/auth.component';

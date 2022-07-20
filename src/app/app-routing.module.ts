@@ -5,7 +5,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { routes as bookRoutes } from './book/book-routing.module';
 import { TabelPageComponent } from './tabel-page/tabel-page.component';
 import { AuthComponent } from './auth/auth.component';
-import { ChartsComponent } from './carts/charts.component';
+import { ChartsComponent } from './charts/charts.component';
 import { AuthGuard } from './auth.guard';
 import { AccessRightGuard } from './right.guard';
 
