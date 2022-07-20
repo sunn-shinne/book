@@ -1,29 +1,43 @@
 import { Injectable, NgZone } from '@angular/core';
-import { User } from '../interfaces/User';
+import { User as UserData } from '../interfaces/User';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import {
   AngularFirestore,
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
-import * as auth from 'firebase/auth';
+import * as firebase from 'firebase/auth';
+import { User } from '@firebase/auth-types';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+
+const accessUrls = {
+  full: 'https://fir-auth-93a4f-default-rtdb.europe-west1.firebasedatabase.app/access-rights-full.json',
+  limited:
+    'https://fir-auth-93a4f-default-rtdb.europe-west1.firebasedatabase.app/access-rights.json',
+};
+
+type firebaseUser = User | null;
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  userData: any;
-  authStream = new Subject<any>();
+  userData: firebaseUser = null;
+  right$: Observable<{ data: string[] }>;
 
   constructor(
     public afs: AngularFirestore,
     public afAuth: AngularFireAuth,
     public router: Router,
-    public ngZone: NgZone
+    public ngZone: NgZone,
+    private http: HttpClient
   ) {
-    this.afAuth.authState.subscribe(this.authStream);
-    this.authStream.subscribe((user: any) => (this.userData = user));
+    this.right$ = http.get<{ data: string[] }>(accessUrls.limited);
+
+    this.afAuth.authState.subscribe((user: firebaseUser) => {
+      this.userData = user;
+    });
   }
 
   SignIn(email: string, password: string) {
@@ -60,7 +74,7 @@ export class AuthService {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `users/${user.uid}`
     );
-    const userData: User = {
+    const userData: UserData = {
       uid: user.uid,
       email: user.email,
       displayName: user.displayName,
@@ -92,7 +106,7 @@ export class AuthService {
 
   GoogleAuth() {
     return this.afAuth
-      .signInWithPopup(new auth.GoogleAuthProvider())
+      .signInWithPopup(new firebase.GoogleAuthProvider())
       .then((result) => {
         this.ngZone.run(() => {
           this.router.navigate(['book/1']);

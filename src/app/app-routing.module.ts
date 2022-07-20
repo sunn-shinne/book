@@ -7,6 +7,7 @@ import { TabelPageComponent } from './tabel-page/tabel-page.component';
 import { AuthComponent } from './auth/auth.component';
 import { ChartsComponent } from './carts/charts.component';
 import { AuthGuard } from './auth.guard';
+import { AccessRightGuard } from './right.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/book/1', pathMatch: 'full' },
@@ -22,17 +23,20 @@ const routes: Routes = [
     path: 'book',
     children: bookRoutes,
     component: BookPageComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard, AccessRightGuard],
+    data: { 'access-token': '2591-1589-6307-7588' },
   },
   {
     path: 'table',
     component: TabelPageComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard, AccessRightGuard],
+    data: { 'access-token': '5525-5681-6140-8266' },
   },
   {
     path: 'charts',
     component: ChartsComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard, AccessRightGuard],
+    data: { 'access-token': '2720-4044-4713-0021' },
   },
   { path: '**', component: NotFoundComponent },
 ];

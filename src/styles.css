@@ -1,4 +1,5 @@
 @import url("~@angular/material/prebuilt-themes/deeppurple-amber.css");
+@import '~ngx-toastr/toastr.css';
 
 @font-face {
   font-family: "Segoe UI";
